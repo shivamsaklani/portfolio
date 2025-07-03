@@ -8,6 +8,9 @@ import { Card } from "@/components/Card";
 import ArrowUp from "@/assets/icons/arrow-up-right.svg";
 import { SectionHeader } from "@/components/SectionHeader";
 import CheckCircle from "@/assets/icons/check-circle.svg";
+import { Button } from "@/components/Button";
+import { LuGithub } from "react-icons/lu";
+import { FaGithub } from "react-icons/fa";
 const portfolioProjects = [
   {
     project: "SocialBrain",
@@ -95,7 +98,14 @@ export const ProjectsSection = () => {
           ))
         }
       </div>
+      <div className="flex justify-center items-center">
 
+        <button className="custom-button z-10 mt-8 items-center gap-2 justify-center text-gray-950 bg-white">
+          <FaGithub/>
+          <span>More on Github</span>
+        </button>
+
+       </div>
     </div>
   </section>;
 };
