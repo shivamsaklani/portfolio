@@ -1,31 +1,39 @@
 "use client"
 import Link from "next/link";
-import { useState } from "react";
+import { RefObject, useState } from "react";
 import {motion} from "motion/react";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { GrClose } from "react-icons/gr";
 import { useScroll } from "motion/react";
-const items=[
-  {title:"Home",
-    link:"/"
-  },
-  {title:"Projects",
-    link:"/"
-  },
- 
-  {title:"About",
-    link:"/"
-  },
-  {title:"Contact",
-    link:"/"
-  },
-]
-export const Header = ({isMobile,icon}:{
-  isMobile:()=>void,
-  icon:boolean
-}) => {
+interface HeaderProps {
+  icon: boolean;
+  isMobile: () => void;
+  refs: {
+   heroRef: RefObject<HTMLDivElement>;
+    projectsRef: RefObject<HTMLDivElement>;
+    aboutRef: RefObject<HTMLDivElement>;
+    contactRef: RefObject<HTMLDivElement>;
+  };
+}
+export const Header = ({
+  isMobile,
+  icon,
+  refs,
+}: HeaderProps)  => {
+  const items = [
+    { title: "Home",  ref: refs.heroRef },
+    { title: "Projects",  ref: refs.projectsRef },
+    { title: "About",  ref: refs.aboutRef },
+    { title: "Contact",  ref: refs.contactRef },
+  ];
   const {scrollYProgress}=useScroll();
   const [click,setclick]=useState("Home");
+    const onScrollToSection = (ref: React.RefObject<HTMLDivElement | null>) => {
+    if (ref.current) {
+      ref.current.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return <div className="flex p-5 justify-between border-b border-white/15  bg-transparent/30 backdrop-blur  w-full fixed z-50">
     <div className="flex items-center justify-center bg-gradient">
       <motion.h1 initial={{opacity:0}} animate={{opacity:1}} transition={{
@@ -39,7 +47,10 @@ export const Header = ({isMobile,icon}:{
     <nav className="gap-1 hidden sm:flex p-1 ">
     {
       items.map(item=>(
-        <Link onClick={()=>setclick(item.title)} className={`nav-items ${click==item.title?"active-nav-item":"nav-items"}`} key={item.title} href={item.link} >{item.title} </Link>
+        <button onClick={()=>{setclick(item.title)
+        onScrollToSection(item.ref);
+        }     
+        } className={`nav-items ${click==item.title?"active-nav-item":"nav-items"}`} key={item.title}>{item.title} </button>
       ))
      }
     </nav>

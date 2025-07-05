@@ -34,10 +34,10 @@ export const HeroSection = () => {
       </p>
       </motion.div>
       <motion.div className="flex flex-col md:flex-row justify-center items-center mt-8  gap-4">
-       
         <button className="custom-button z-10 border-white bg-white border-1  text-gray-900">
+         <a href="https://docs.google.com/document/d/1g5pVPtlt0WfVG4xFLauMZm5Tx_yEB__6/edit?usp=sharing&ouid=113086259152655338028&rtpof=true&sd=true" target="blank">
           <span>📄</span>
-          <span className="font-semibold">Download CV</span>
+          <span className="font-semibold">Download CV</span></a>
         </button>
         <button className="custom-button z-10 border-white/15">
           <span className="font-semibolds">Explore</span>

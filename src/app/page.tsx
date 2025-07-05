@@ -8,23 +8,34 @@ import { IsMobile } from "@/sections/Mobile";
 import { ProjectsSection } from "@/sections/Projects";
 import { TapeSection } from "@/sections/Tape";
 
-import { useState } from "react";
+import { useRef, useState } from "react";
 export default function Home() {
+const heroRef = useRef<HTMLDivElement>(null);
+const projectsRef = useRef<HTMLDivElement>(null);
+const aboutRef = useRef<HTMLDivElement>(null);
+const contactRef = useRef<HTMLDivElement>(null);
   const [isMobileOpen, setIsMobileOpen] = useState(false);
   
   return (
    <>
     <div>
-     <Header icon={isMobileOpen} isMobile={()=>setIsMobileOpen(!isMobileOpen)}/>
-    <IsMobile open={isMobileOpen}/>
-     <HeroSection/>
-    <ProjectsSection/>
-    <TapeSection/>
-    <AboutSection/>
-    <Contact/>
-    <Footer/>
-    
-   </div>
+      <Header
+      refs={{
+        heroRef: heroRef as React.RefObject<HTMLDivElement>,
+        projectsRef: projectsRef as React.RefObject<HTMLDivElement>,
+        aboutRef: aboutRef as React.RefObject<HTMLDivElement>,
+        contactRef: contactRef as React.RefObject<HTMLDivElement>,
+      }}
+      icon={isMobileOpen}
+      isMobile={() => setIsMobileOpen(!isMobileOpen)}
+      />
+      <IsMobile open={isMobileOpen} />
+         <div ref={heroRef}><HeroSection /></div>
+      <div ref={projectsRef}><ProjectsSection /></div>
+      <div><TapeSection /></div>
+      <div ref={aboutRef}><AboutSection /></div>
+      <div ref={contactRef}><Contact /></div>
+    </div>
    </>
   );
 }

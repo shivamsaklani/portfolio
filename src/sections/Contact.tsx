@@ -3,8 +3,30 @@ import {motion} from "motion/react";
 import { SectionHeader } from "@/components/SectionHeader";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import emailjs from "@emailjs/browser";
+import { FormEvent, useRef } from "react";
 
 export const Contact = () => {
+const formRef = useRef<HTMLFormElement>(null);
+
+
+  const sendEmail = (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+
+    if (!formRef.current) return;
+    emailjs.sendForm(
+        process.env.NEXT_PUBLIC_SERVICE_ID as string,
+        process.env.NEXT_PUBLIC_TEMPLATE_ID as string,
+        formRef.current,
+        process.env.NEXT_PUBLIC_PUBLIC_KEY as string
+      )
+      .then(
+        () => alert("Message sent!"),
+        () => alert("Failed to send.")
+      );
+
+    formRef.current.reset(); // reset after sending
+  };
 
   return (
     <div className="lg:space-y-15">
@@ -31,27 +53,28 @@ export const Contact = () => {
 </div>
       
      </div>
-     <motion.div initial={{}} animate={{}} exit={{}}>
+     <motion.div>
       <div className="flex min-h-screen flex-col items-center justify-center">
    
      
-        
-   <div className="mt-[-40px] w-full flex justify-center px-4">
+   <form ref={formRef} onSubmit={sendEmail} className="mt-[-40px] w-full flex justify-center px-4 ">   
+  
    <div className="p-8 max-w-lg w-full rounded-2xl shadow-lg bg-white">
      <div className="space-y-5 text-gray-900">
-    
+      
          <Label className="text-gray-700">Your Name</Label>
-         <Input type="text" placeholder="Enter your Name" />
+         <Input name="user_name" type="text" placeholder="Enter your Name" />
        
 
      
          <Label className="text-gray-700">Email</Label>
-         <Input  type="email" placeholder="Enter your Email" />
+         <Input name="user_email" type="email" placeholder="Enter your Email" />
     
 
      
          <Label className="text-gray-700">Your Thoughts</Label>
          <textarea 
+         name="message"
            className="w-full rounded-lg border px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-primary"
            rows={5}
            placeholder="Please share your thoughts. I will surely respond."
@@ -59,19 +82,20 @@ export const Contact = () => {
   
 
        <div className="flex justify-center">
-         <motion.div whileHover={{
-        
-         }} className="hover:bg-gray-950/90 cursor-pointer bg-gray-950 text-white px-6 py-2 rounded-md transition">
+         <motion.div className="hover:bg-gray-950/90 cursor-pointer bg-gray-950 text-white px-6 py-2 rounded-md transition">
           <motion.div className="relative bg-green-300" />
-         <button className="cursor-pointer">
+         <button type="submit" className="cursor-pointer">
                 Share Your Thoughts
          </button>
+        
+         
          </motion.div>
         
        </div>
+
      </div>
    </div>
- </div>
+  </form>
  </div>
  </motion.div>
 

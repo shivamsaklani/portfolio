@@ -12,7 +12,7 @@ const calistoga = Calistoga({
   variable:"--font-serif"
 })
 export const metadata: Metadata = {
-  title: "My Portfolio",
+  title: "Shivam Saklani",
   description: "Created with the help of Frontend Tribe",
 };
 
