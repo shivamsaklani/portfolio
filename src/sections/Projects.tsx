@@ -1,53 +1,51 @@
 "use client";
 import project1 from "@/assets/images/project-1.png";
-import lightSaasLandingPage from "@/assets/images/light-saas-landing-page.png";
-import aiStartupLandingPage from "@/assets/images/ai-startup-landing-page.png";
+import project3 from "@/assets/images/project-3.png";
+import project2 from "@/assets/images/project-2.png";
 import grainImager from "@/assets/images/grain.jpg";
 import Image from "next/image";
 import { Card } from "@/components/Card";
 import ArrowUp from "@/assets/icons/arrow-up-right.svg";
 import { SectionHeader } from "@/components/SectionHeader";
 import CheckCircle from "@/assets/icons/check-circle.svg";
-import { Button } from "@/components/Button";
-import { LuGithub } from "react-icons/lu";
 import { FaGithub } from "react-icons/fa";
 const portfolioProjects = [
   {
     project: "SocialBrain",
     year: "2022",
-    title: "Dark Saas Landing Page",
+    title: " Keeping your posts in one place",
     results: [
-      { title: "Enhanced user experience by 40%" },
-      { title: "Improved site speed by 50%" },
-      { title: "Increased mobile traffic by 35%" },
+      { title: "Stores your Social Post" },
+      { title: "Tech Stack:React,Typescript,MongoDB" },
+      { title: "Used JWT for Authentication" },
     ],
     link: "https://socialbrain.shivamsaklani.digital/",
     image: project1,
   },
   {
-    project: "Attendance Management System",
-    year: "2021",
-    title: "Light Saas Landing Page",
-    results: [
-      { title: "Boosted sales by 20%" },
-      { title: "Expanded customer reach by 35%" },
-      { title: "Increased brand awareness by 15%" },
-    ],
-    link: "https://youtu.be/7hi5zwO75yc",
-    image: lightSaasLandingPage,
-  },
-  {
-    project: "Canvas- ExceliDraw Clone",
+    project: "Canvas",
     year: "2023",
-    title: "AI Startup Landing Page",
+    title: "ExceliDraw Clone for crafting 2D Designs",
     results: [
-      { title: "Enhanced user experience by 40%" },
-      { title: "Improved site speed by 50%" },
-      { title: "Increased mobile traffic by 35%" },
+      { title: "Created 2d Design with eazy" },
+      { title: "Tech Stack : React,Typescript,Postgres,Websockets" },
+      { title: "Used JWT,Email Verification using Reddis" },
     ],
-    link: "https://youtu.be/Z7I5uSRHMHg",
-    image: aiStartupLandingPage,
+    link: "https://github.com/shivamsaklani/Canvas",
+    image: project2,
   },
+   {
+    project: "Tuneify",
+    year: "2025",
+    title: "Music According to your Mood",
+    results: [
+      { title: "Using FaceAPI detect Mood" },
+      { title: "Tech Stack:React,Typescript" },
+      { title: "Spotify API for Authentication" },
+    ],
+    link: "https://github.com/shivamsaklani/Tuneify",
+    image: project3,
+  }
 ];
 
 export const ProjectsSection = () => {
@@ -84,7 +82,7 @@ export const ProjectsSection = () => {
                 }
               </ul>
               <a href={project.link}>
-                <button className="custom-button z-10 mt-8 items-center gap-2 justify-center text-gray-950 bg-white"><span>View Live Site</span>
+                <button className="custom-button z-10 mt-8 items-center gap-2 justify-center text-gray-950 bg-white"><span>View</span>
                 <ArrowUp className="size-4"/>
                 
                 </button>
@@ -99,11 +97,12 @@ export const ProjectsSection = () => {
         }
       </div>
       <div className="flex justify-center items-center">
-
+        <a href="https://github.com/shivamsaklani" target="_blank" rel="noopener noreferrer">
         <button className="custom-button z-10 mt-8 items-center gap-2 justify-center text-gray-950 bg-white">
           <FaGithub/>
           <span>More on Github</span>
         </button>
+        </a>
 
        </div>
     </div>
