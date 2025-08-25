@@ -7,6 +7,7 @@ import { HeroSection } from "@/sections/Hero";
 import { IsMobile } from "@/sections/Mobile";
 import { ProjectsSection } from "@/sections/Projects";
 import { TapeSection } from "@/sections/Tape";
+import {Toaster} from "react-hot-toast";
 
 import { useRef, useState } from "react";
 export default function Home() {
@@ -18,6 +19,7 @@ const contactRef = useRef<HTMLDivElement>(null);
   
   return (
    <>
+   <div><Toaster/></div>
     <div>
       <Header
       refs={{
@@ -35,6 +37,7 @@ const contactRef = useRef<HTMLDivElement>(null);
       <div><TapeSection /></div>
       <div ref={aboutRef}><AboutSection /></div>
       <div ref={contactRef}><Contact /></div>
+      <Footer/>
     </div>
    </>
   );

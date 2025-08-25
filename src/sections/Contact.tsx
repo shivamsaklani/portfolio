@@ -5,6 +5,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import emailjs from "@emailjs/browser";
 import { FormEvent, useRef } from "react";
+import toast, { Toaster } from "react-hot-toast";
 
 export const Contact = () => {
 const formRef = useRef<HTMLFormElement>(null);
@@ -21,9 +22,10 @@ const formRef = useRef<HTMLFormElement>(null);
         process.env.NEXT_PUBLIC_PUBLIC_KEY as string
       )
       .then(
-        () => alert("Message sent!"),
-        () => alert("Failed to send.")
-      );
+        () => toast.success("message sent"),
+      ).catch((error)=>{
+        toast.error("Try Again");
+      });
 
     formRef.current.reset(); // reset after sending
   };
@@ -104,4 +106,5 @@ const formRef = useRef<HTMLFormElement>(null);
     </div>
    
   );
-};
+};   
+        () => alert("Failed to send.")
