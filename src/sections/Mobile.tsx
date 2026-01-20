@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 import {AnimatePresence, motion} from "motion/react";
 import Link from "next/link";
 import { BsHouse,  BsPersonExclamation } from "react-icons/bs";
@@ -25,7 +25,7 @@ const items=[
     icon:LuContact
   },
 ]
-export const IsMobile = ({
+const IsMobile = ({
   open,
 }: {
   open: boolean;
@@ -61,3 +61,5 @@ export const IsMobile = ({
     </AnimatePresence>
   );
 };
+
+export default IsMobile;

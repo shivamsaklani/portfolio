@@ -4,13 +4,15 @@ import { Contact } from "@/sections/Contact";
 
 import { Header } from "@/sections/Header";
 import { HeroSection } from "@/sections/Hero";
-import { IsMobile } from "@/sections/Mobile";
+import IsMobile from "@/sections/Mobile";
 import { ProjectsSection } from "@/sections/Projects";
 import { TapeSection } from "@/sections/Tape";
 import { Experience } from "@/sections/Experience";
 import { Toaster } from "react-hot-toast";
 
 import { useRef, useState } from "react";
+
+export const dynamic = 'force-dynamic';
 export default function Home() {
   const heroRef = useRef<HTMLDivElement>(null);
   const projectsRef = useRef<HTMLDivElement>(null);

@@ -104,5 +104,4 @@ export const Header = ({
       style={{ scaleX: scrollYProgress }}
     />
   </div>
-    ;
 };
