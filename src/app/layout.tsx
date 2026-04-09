@@ -14,6 +14,9 @@ const calistoga = Calistoga({
 export const metadata: Metadata = {
   title: "Shivam Saklani",
   description: "Software Developer",
+  icons:{
+    icon:"/favicon.png"
+  }
 };
 
 export default function RootLayout({

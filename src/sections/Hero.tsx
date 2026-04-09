@@ -34,7 +34,7 @@ export const HeroSection = () => {
             animate={{ y: 0, opacity: 1 }}
             transition={{ delay: 0.7, duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
           >
-            I'm <b className="text-green-300">Software Developer.</b>
+            I'm a<b className="text-green-300">Software Developer.</b>
           </motion.h1>
 
           {/* Animated Description */}
@@ -96,7 +96,7 @@ export const HeroSection = () => {
           <div className="relative w-56 h-56 md:w-72 md:h-72 lg:w-80 lg:h-80">
             <Image
               src={profilePhoto}
-              className="w-full h-full rounded-sm"
+              className="rounded-sm"
               alt="Shivam Saklani"
               priority
             />
