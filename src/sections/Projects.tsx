@@ -34,7 +34,7 @@ const portfolioProjects = [
       { title: "Tech Stack : Solana | React | Typescript" },
       { title: "Used Web3 libraries for Authentication" },
     ],
-    link: "https://solana-dapp-phi.vercel.app/",
+    link: "https://dapp.shivamsaklani.online",
     image: project5,
   },
 
@@ -63,15 +63,15 @@ const portfolioProjects = [
     image: project2,
   },
   {
-    project: "SocialBrain",
+    project: "Bookmark",
     year: "2022",
     title: " Keeping your posts in one place",
     results: [
       { title: "Stores your Social Post" },
-      { title: "Tech Stack:React,Typescript,MongoDB" },
+      { title: "Tech Stack:React,Typescript" },
       { title: "Used JWT for Authentication" },
     ],
-    link: "https://socialbrain.shivamsaklani.digital/",
+    link: "https://bookmark.shivamsaklani.online/",
     image: project1,
   },
 ];
