@@ -8,9 +8,9 @@ const experiences = [
     {
         company: "IRDE, DRDO",
         position: "Intern",
-        duration: "Aug 2025 - Present",
-        description: "Currently working as an Intern at IRDE, Dehradun, where my responsibilities include Python-based machine learning model training, preprocessing large datasets, and optimizing model performance for research applications.",
-        skills: ["Python", "Machine Learning", "Data Preprocessing", "Model Optimization"]
+        duration: "Aug 2025 - Feb 2026",
+        description: "Worked on a project focused on Non-Line-of-Sight (NLOS) imaging, exploring techniques for detecting and reconstructing objects not directly visible to the camera.I worked as a Software intern ,where I focused on concepts such as data processing, noise reduction techniques, and basic algorithm optimization for imaging systems.",
+        skills: ["Python", "Data Preprocessing", "Model Optimization"]
     },
     {
         company: "Opto Electronics, OLF",

@@ -62,7 +62,8 @@ export const HeroSection = () => {
             >
               <a href="https://docs.google.com/document/d/1g5pVPtlt0WfVG4xFLauMZm5Tx_yEB__6/edit?usp=sharing&ouid=113086259152655338028&rtpof=true&sd=true" target="blank">
                 <span>📄</span>
-                <span className="font-semibold">Download CV</span></a>
+                <span className="font-semibold">Download CV</span>
+              </a>
             </motion.button>
 
             <motion.button
